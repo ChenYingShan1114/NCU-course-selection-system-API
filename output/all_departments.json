@@ -1,0 +1,464 @@
+[
+    {
+        "en": "Physical Education Office(193)",
+        "ch": "體育室(193)",
+        "url": "https://cis.ncu.edu.tw/Course/main/query/byUnion?dept=deptI0I1I0",
+        "courses": 193
+    },
+    {
+        "en": "Military Training Office(2)",
+        "ch": "軍訓室(2)",
+        "url": "https://cis.ncu.edu.tw/Course/main/query/byUnion?dept=deptI0I5I0",
+        "courses": 2
+    },
+    {
+        "en": "Division of Student Affairs-Student Counselling(33)",
+        "ch": "學務處-服務學習發展中心(33)",
+        "url": "https://cis.ncu.edu.tw/Course/main/query/byUnion?dept=deptI0I8I0",
+        "courses": 33
+    },
+    {
+        "en": "General Education Center(67)",
+        "ch": "通識教育中心(67)",
+        "url": "https://cis.ncu.edu.tw/Course/main/query/byUnion?dept=deptI0I9I0",
+        "courses": 67
+    },
+    {
+        "en": "Language Center(100)",
+        "ch": "語言中心(100)",
+        "url": "https://cis.ncu.edu.tw/Course/main/query/byUnion?dept=deptI0I10I0",
+        "courses": 100
+    },
+    {
+        "en": "Teaching Center(19)",
+        "ch": "總教學中心(19)",
+        "url": "https://cis.ncu.edu.tw/Course/main/query/byUnion?dept=deptI0I11I0",
+        "courses": 19
+    },
+    {
+        "en": "Career Center(3)",
+        "ch": "職涯發展中心(3)",
+        "url": "https://cis.ncu.edu.tw/Course/main/query/byUnion?dept=deptI0I13I0",
+        "courses": 3
+    },
+    {
+        "en": "Master of Science Program in Remote Sensing Science and Technology(16)",
+        "ch": "遙測科技碩士學位學程(16)",
+        "url": "https://cis.ncu.edu.tw/Course/main/query/byUnion?dept=deptI1I202I0",
+        "courses": 16
+    },
+    {
+        "en": "International Ph.D. Program in Environmental Science and Technology(UST-EST)(2)",
+        "ch": "環境科技博士學位學程(台灣聯合大學系統)(2)",
+        "url": "https://cis.ncu.edu.tw/Course/main/query/byUnion?dept=deptI1I403I0",
+        "courses": 2
+    },
+    {
+        "en": "Center of Teacher-training Program(17)",
+        "ch": "師資培育中心(17)",
+        "url": "https://cis.ncu.edu.tw/Course/main/query/byUnion?dept=deptI0I6I0",
+        "courses": 17
+    },
+    {
+        "en": "Department of Chinese Literature(86)",
+        "ch": "中國文學系(86)",
+        "url": "https://cis.ncu.edu.tw/Course/main/query/byUnion?dept=deptI1I1001I0",
+        "courses": 86
+    },
+    {
+        "en": "Department of English(31)",
+        "ch": "英美語文學系(31)",
+        "url": "https://cis.ncu.edu.tw/Course/main/query/byUnion?dept=deptI1I1002I0",
+        "courses": 31
+    },
+    {
+        "en": "Department of French(47)",
+        "ch": "法國語文學系(47)",
+        "url": "https://cis.ncu.edu.tw/Course/main/query/byUnion?dept=deptI1I1003I0",
+        "courses": 47
+    },
+    {
+        "en": "Interdisciplinary Program of Liberal Arts(3)",
+        "ch": "文學院學士班(3)",
+        "url": "https://cis.ncu.edu.tw/Course/main/query/byUnion?dept=deptI1I1008I0",
+        "courses": 3
+    },
+    {
+        "en": "Institute of Philosophy(17)",
+        "ch": "哲學研究所(17)",
+        "url": "https://cis.ncu.edu.tw/Course/main/query/byUnion?dept=deptI1I1204I0",
+        "courses": 17
+    },
+    {
+        "en": "Institute of  History(15)",
+        "ch": "歷史研究所(15)",
+        "url": "https://cis.ncu.edu.tw/Course/main/query/byUnion?dept=deptI1I1205I0",
+        "courses": 15
+    },
+    {
+        "en": "Institute of Art Studies(11)",
+        "ch": "藝術學研究所(11)",
+        "url": "https://cis.ncu.edu.tw/Course/main/query/byUnion?dept=deptI1I1206I0",
+        "courses": 11
+    },
+    {
+        "en": "Institute of Learning & Instruction(9)",
+        "ch": "學習與教學研究所(9)",
+        "url": "https://cis.ncu.edu.tw/Course/main/query/byUnion?dept=deptI1I1207I0",
+        "courses": 9
+    },
+    {
+        "en": "International Master‘s Program in Inter-Asia Cultural Studies(5)",
+        "ch": "亞際文化研究國際碩士學位學程(5)",
+        "url": "https://cis.ncu.edu.tw/Course/main/query/byUnion?dept=deptI1I1209I0",
+        "courses": 5
+    },
+    {
+        "en": "College of Science(3)",
+        "ch": "理學院(3)",
+        "url": "https://cis.ncu.edu.tw/Course/main/query/byUnion?dept=deptI1I2000I0",
+        "courses": 3
+    },
+    {
+        "en": "Department of Mathematics(68)",
+        "ch": "數學系(68)",
+        "url": "https://cis.ncu.edu.tw/Course/main/query/byUnion?dept=deptI1I2001I0",
+        "courses": 68
+    },
+    {
+        "en": "Department of Physics(90)",
+        "ch": "物理學系(90)",
+        "url": "https://cis.ncu.edu.tw/Course/main/query/byUnion?dept=deptI1I2002I0",
+        "courses": 90
+    },
+    {
+        "en": "Department of Chemistry(49)",
+        "ch": "化學學系(49)",
+        "url": "https://cis.ncu.edu.tw/Course/main/query/byUnion?dept=deptI1I2003I0",
+        "courses": 49
+    },
+    {
+        "en": "Department of Optics and Photonics(47)",
+        "ch": "光電科學與工程學系(47)",
+        "url": "https://cis.ncu.edu.tw/Course/main/query/byUnion?dept=deptI1I2006I0",
+        "courses": 47
+    },
+    {
+        "en": "Joint Science Program(5)",
+        "ch": "理學院學士班(5)",
+        "url": "https://cis.ncu.edu.tw/Course/main/query/byUnion?dept=deptI1I2008I0",
+        "courses": 5
+    },
+    {
+        "en": "Institute of Statistics(13)",
+        "ch": "統計研究所(13)",
+        "url": "https://cis.ncu.edu.tw/Course/main/query/byUnion?dept=deptI1I2205I0",
+        "courses": 13
+    },
+    {
+        "en": "Institute of Astronomy(11)",
+        "ch": "天文研究所(11)",
+        "url": "https://cis.ncu.edu.tw/Course/main/query/byUnion?dept=deptI1I2209I0",
+        "courses": 11
+    },
+    {
+        "en": "College of Engineering(18)",
+        "ch": "工學院(18)",
+        "url": "https://cis.ncu.edu.tw/Course/main/query/byUnion?dept=deptI1I3000I0",
+        "courses": 18
+    },
+    {
+        "en": "Department of Civil Engineering(84)",
+        "ch": "土木工程學系(84)",
+        "url": "https://cis.ncu.edu.tw/Course/main/query/byUnion?dept=deptI1I3002I0",
+        "courses": 84
+    },
+    {
+        "en": "Department of Mechanical Engineering(107)",
+        "ch": "機械工程學系(107)",
+        "url": "https://cis.ncu.edu.tw/Course/main/query/byUnion?dept=deptI1I3003I0",
+        "courses": 107
+    },
+    {
+        "en": "Department of  Chemical Engineering(44)",
+        "ch": "化學工程與材料工程學系(44)",
+        "url": "https://cis.ncu.edu.tw/Course/main/query/byUnion?dept=deptI1I3004I0",
+        "courses": 44
+    },
+    {
+        "en": "Interdisciplinary Program of Engineering(4)",
+        "ch": "工學院學士班(4)",
+        "url": "https://cis.ncu.edu.tw/Course/main/query/byUnion?dept=deptI1I3005I0",
+        "courses": 4
+    },
+    {
+        "en": "Institute of Construction Management(13)",
+        "ch": "營建管理研究所(13)",
+        "url": "https://cis.ncu.edu.tw/Course/main/query/byUnion?dept=deptI1I3205I0",
+        "courses": 13
+    },
+    {
+        "en": "Institute of Environmental Engineering(22)",
+        "ch": "環境工程研究所(22)",
+        "url": "https://cis.ncu.edu.tw/Course/main/query/byUnion?dept=deptI1I3206I0",
+        "courses": 22
+    },
+    {
+        "en": "Institute of Energy Engineering(6)",
+        "ch": "能源工程研究所(6)",
+        "url": "https://cis.ncu.edu.tw/Course/main/query/byUnion?dept=deptI1I3208I0",
+        "courses": 6
+    },
+    {
+        "en": "Institute of Materials Science and Engineering(8)",
+        "ch": "材料科學與工程研究所(8)",
+        "url": "https://cis.ncu.edu.tw/Course/main/query/byUnion?dept=deptI1I3209I0",
+        "courses": 8
+    },
+    {
+        "en": "Master‘s Program in Construction Management, Department of Civil Engineering(13)",
+        "ch": "營建管理研究所(13)",
+        "url": "https://cis.ncu.edu.tw/Course/main/query/byUnion?dept=deptI1I3213I0",
+        "courses": 13
+    },
+    {
+        "en": "School of Management(23)",
+        "ch": "管理學院(23)",
+        "url": "https://cis.ncu.edu.tw/Course/main/query/byUnion?dept=deptI1I4000I0",
+        "courses": 23
+    },
+    {
+        "en": "Department of Business Administration(61)",
+        "ch": "企業管理學系(61)",
+        "url": "https://cis.ncu.edu.tw/Course/main/query/byUnion?dept=deptI1I4001I0",
+        "courses": 61
+    },
+    {
+        "en": "Department of Information Management(42)",
+        "ch": "資訊管理學系(42)",
+        "url": "https://cis.ncu.edu.tw/Course/main/query/byUnion?dept=deptI1I4003I0",
+        "courses": 42
+    },
+    {
+        "en": "Department of Finance(50)",
+        "ch": "財務金融學系(50)",
+        "url": "https://cis.ncu.edu.tw/Course/main/query/byUnion?dept=deptI1I4008I0",
+        "courses": 50
+    },
+    {
+        "en": "Department of Economics(30)",
+        "ch": "經濟學系(30)",
+        "url": "https://cis.ncu.edu.tw/Course/main/query/byUnion?dept=deptI1I4009I0",
+        "courses": 30
+    },
+    {
+        "en": "Institute of Industrial Economics(18)",
+        "ch": "產業經濟研究所(18)",
+        "url": "https://cis.ncu.edu.tw/Course/main/query/byUnion?dept=deptI1I4204I0",
+        "courses": 18
+    },
+    {
+        "en": "Institute of Industrial Management(22)",
+        "ch": "工業管理研究所(22)",
+        "url": "https://cis.ncu.edu.tw/Course/main/query/byUnion?dept=deptI1I4206I0",
+        "courses": 22
+    },
+    {
+        "en": "Institute of Human Resource Management(24)",
+        "ch": "人力資源管理研究所(24)",
+        "url": "https://cis.ncu.edu.tw/Course/main/query/byUnion?dept=deptI1I4207I0",
+        "courses": 24
+    },
+    {
+        "en": "Institute of Accounting(11)",
+        "ch": "會計研究所(11)",
+        "url": "https://cis.ncu.edu.tw/Course/main/query/byUnion?dept=deptI1I4210I0",
+        "courses": 11
+    },
+    {
+        "en": "International Master of Business Administration program(17)",
+        "ch": "國際經營管理碩士學位學程(17)",
+        "url": "https://cis.ncu.edu.tw/Course/main/query/byUnion?dept=deptI1I4212I0",
+        "courses": 17
+    },
+    {
+        "en": "Executive Master of Business Administration(11)",
+        "ch": "管理學院高階主管企管碩士班(11)",
+        "url": "https://cis.ncu.edu.tw/Course/main/query/byUnion?dept=deptI1I4300I0",
+        "courses": 11
+    },
+    {
+        "en": "Executive Master in Military Management(1)",
+        "ch": "現役軍人營區專班(1)",
+        "url": "https://cis.ncu.edu.tw/Course/main/query/byUnion?dept=deptI1I4311I0",
+        "courses": 1
+    },
+    {
+        "en": "Department of Electrical Engineering(63)",
+        "ch": "電機工程學系(63)",
+        "url": "https://cis.ncu.edu.tw/Course/main/query/byUnion?dept=deptI1I5001I0",
+        "courses": 63
+    },
+    {
+        "en": "Department of Computer Science and Elec. Engineering(67)",
+        "ch": "資訊工程學系(67)",
+        "url": "https://cis.ncu.edu.tw/Course/main/query/byUnion?dept=deptI1I5002I0",
+        "courses": 67
+    },
+    {
+        "en": "Department of Communication Engineering(29)",
+        "ch": "通訊工程學系(29)",
+        "url": "https://cis.ncu.edu.tw/Course/main/query/byUnion?dept=deptI1I5003I0",
+        "courses": 29
+    },
+    {
+        "en": "Interdisciplinary Program of Electrical Engineering and Computer Science(2)",
+        "ch": "資訊電機學院學士班(2)",
+        "url": "https://cis.ncu.edu.tw/Course/main/query/byUnion?dept=deptI1I5004I0",
+        "courses": 2
+    },
+    {
+        "en": "Institute of Network Learning Technology(12)",
+        "ch": "網路學習科技研究所(12)",
+        "url": "https://cis.ncu.edu.tw/Course/main/query/byUnion?dept=deptI1I5204I0",
+        "courses": 12
+    },
+    {
+        "en": "International Graduate Program in Artificial Intelligence(4)",
+        "ch": "人工智慧國際碩士學位學程(4)",
+        "url": "https://cis.ncu.edu.tw/Course/main/query/byUnion?dept=deptI1I5207I0",
+        "courses": 4
+    },
+    {
+        "en": "Department of Atmospheric Physics(41)",
+        "ch": "大氣科學系(41)",
+        "url": "https://cis.ncu.edu.tw/Course/main/query/byUnion?dept=deptI1I6001I0",
+        "courses": 41
+    },
+    {
+        "en": "Department of Geophysics(85)",
+        "ch": "地球科學系(85)",
+        "url": "https://cis.ncu.edu.tw/Course/main/query/byUnion?dept=deptI1I6002I0",
+        "courses": 85
+    },
+    {
+        "en": "Interdisciplinary Program of Earth System Science(24)",
+        "ch": "地科院學士班(24)",
+        "url": "https://cis.ncu.edu.tw/Course/main/query/byUnion?dept=deptI1I6005I0",
+        "courses": 24
+    },
+    {
+        "en": "Department of Space Science and Engineering(53)",
+        "ch": "太空科學與工程學系(53)",
+        "url": "https://cis.ncu.edu.tw/Course/main/query/byUnion?dept=deptI1I6007I0",
+        "courses": 53
+    },
+    {
+        "en": "Institute of Applied Geology(25)",
+        "ch": "應用地質研究所(25)",
+        "url": "https://cis.ncu.edu.tw/Course/main/query/byUnion?dept=deptI1I6204I0",
+        "courses": 25
+    },
+    {
+        "en": "Institute of Hydrologocal and  Oceanic Sciences(21)",
+        "ch": "水文與海洋科學研究所(21)",
+        "url": "https://cis.ncu.edu.tw/Course/main/query/byUnion?dept=deptI1I6206I0",
+        "courses": 21
+    },
+    {
+        "en": "International Ph.D. Graduate Program for Earth System Science(12)",
+        "ch": "地球系統科學國際研究生博士學位學程(12)",
+        "url": "https://cis.ncu.edu.tw/Course/main/query/byUnion?dept=deptI1I6410I0",
+        "courses": 12
+    },
+    {
+        "en": "Department of Hakka Language and Social Sciences(30)",
+        "ch": "客家語文暨社會科學學系(30)",
+        "url": "https://cis.ncu.edu.tw/Course/main/query/byUnion?dept=deptI1I7007I0",
+        "courses": 30
+    },
+    {
+        "en": "Institute of  Law and Government(21)",
+        "ch": "法律與政府研究所(21)",
+        "url": "https://cis.ncu.edu.tw/Course/main/query/byUnion?dept=deptI1I7204I0",
+        "courses": 21
+    },
+    {
+        "en": "Master Program of Hakka Social and Policy Sciences(7)",
+        "ch": "客家社會及政策碩士班(7)",
+        "url": "https://cis.ncu.edu.tw/Course/main/query/byUnion?dept=deptI1I7205I0",
+        "courses": 7
+    },
+    {
+        "en": "Master Program in Hakka Language and Literature, Department of Hakka Language and Social Sciences(5)",
+        "ch": "客家語文暨社會科學學系客家語文碩士班(5)",
+        "url": "https://cis.ncu.edu.tw/Course/main/query/byUnion?dept=deptI1I7208I0",
+        "courses": 5
+    },
+    {
+        "en": "The Executive Master Program of Hakka Studies,Department of Hakka Language and Social Sciences(6)",
+        "ch": "客家語文暨社會科學學系客家研究碩士在職專班(6)",
+        "url": "https://cis.ncu.edu.tw/Course/main/query/byUnion?dept=deptI1I7307I0",
+        "courses": 6
+    },
+    {
+        "en": "Ph.D. Program of Hakka Studies, Department of Hakka Language and Social Sciences(3)",
+        "ch": "客家語文暨社會科學學系客家研究博士班(3)",
+        "url": "https://cis.ncu.edu.tw/Course/main/query/byUnion?dept=deptI1I7407I0",
+        "courses": 3
+    },
+    {
+        "en": "Ph.D. Program of Public Affairs and　Ethnic Studies(3)",
+        "ch": "公共事務與族群研究博士學位學程(3)",
+        "url": "https://cis.ncu.edu.tw/Course/main/query/byUnion?dept=deptI1I7601I0",
+        "courses": 3
+    },
+    {
+        "en": "Department of Life Sciences(56)",
+        "ch": "生命科學系(56)",
+        "url": "https://cis.ncu.edu.tw/Course/main/query/byUnion?dept=deptI1I8001I0",
+        "courses": 56
+    },
+    {
+        "en": "Department of Biomedical Sciences and Engineering(22)",
+        "ch": "生醫科學與工程學系(22)",
+        "url": "https://cis.ncu.edu.tw/Course/main/query/byUnion?dept=deptI1I8002I0",
+        "courses": 22
+    },
+    {
+        "en": "Institute of Cognitive Neuroscience(17)",
+        "ch": "認知神經科學研究所(17)",
+        "url": "https://cis.ncu.edu.tw/Course/main/query/byUnion?dept=deptI1I8205I0",
+        "courses": 17
+    },
+    {
+        "en": "Institute of Translational and Interdisciplinary Medicine(6)",
+        "ch": "跨領域轉譯醫學研究所(6)",
+        "url": "https://cis.ncu.edu.tw/Course/main/query/byUnion?dept=deptI1I8208I0",
+        "courses": 6
+    },
+    {
+        "en": "Master Program in Systems Biology and Bioinformatics, Department of Biomedical Sciences and Engineer(15)",
+        "ch": "生醫科學與工程學系系統生物與生物資訊碩士班(15)",
+        "url": "https://cis.ncu.edu.tw/Course/main/query/byUnion?dept=deptI1I8210I0",
+        "courses": 15
+    },
+    {
+        "en": "Master Program in Biomedical Engineering, Department of Biomedical Sciences and Engineering(11)",
+        "ch": "生醫科學與工程學系生物醫學工程碩士班(11)",
+        "url": "https://cis.ncu.edu.tw/Course/main/query/byUnion?dept=deptI1I8211I0",
+        "courses": 11
+    },
+    {
+        "en": "PhD in Institute of Translational and Interdisciplinary Medicine(6)",
+        "ch": "生醫科學與工程學系跨領域轉譯醫學博士班(6)",
+        "url": "https://cis.ncu.edu.tw/Course/main/query/byUnion?dept=deptI1I8408I0",
+        "courses": 6
+    },
+    {
+        "en": "International Ph.D. Program in Interdisciplinary Neuroscience(6)",
+        "ch": "跨領域神經科學國際研究生博士學位學程(6)",
+        "url": "https://cis.ncu.edu.tw/Course/main/query/byUnion?dept=deptI1I8412I0",
+        "courses": 6
+    }
+]
