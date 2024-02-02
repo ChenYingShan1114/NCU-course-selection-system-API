@@ -51,10 +51,14 @@ def fetch_departments():
     result = []
     for i in range(len(en_result)):
         if en_result[i]['url'] != ch_result[i]['url']:
-            
+            print('[Fatel error] English and Chinese department data mismatched [url mismatch]')
+            print('===================[Data mismatch]===================')
+            print('Mismatched data at index: ' + str(i))
+            print('En: ' + str(en_result[i]))
+            print('Ch: ' + str(ch_result[i]))
             raise ChEnDataMismatchError
         if en_result[i]['courses'] != ch_result[i]['courses']:
-            print('[Fatel error] English and Chinese department data mismatched')
+            print('[Fatel error] English and Chinese department data mismatched [course amount mismatch]')
             print('===================[Data mismatch]===================')
             print('Mismatched data at index: ' + str(i))
             print('En: ' + str(en_result[i]))
