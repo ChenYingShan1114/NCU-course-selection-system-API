@@ -26,8 +26,6 @@ def parse_department(response):
             print('Failed to parse department info when : ' + dep_info_text)
             dep_courses = 'N/A'
             dep_name = dep_info_text
-
-        dep_name = item.a.get_text()
         results.append({
             'name'   : dep_name,
             'url'    : dep_url,
