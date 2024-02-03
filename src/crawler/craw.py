@@ -28,17 +28,17 @@ def fetch_departments():
     # Second try to get the response from the server (toggled language)
     reqter.toggle_language()
     response = reqter.getter(url)
-    if response is not None:
-        if first_is_english:
-            print('Parsing English department data ......')
-            ch_result = parse_department(response)
-        else :
-            print('Parsing Chinese department data ......')
-            en_result = parse_department(response)
-    else:
+    if response is None:
         print('Get null response from the server at fetch_departments() (2/2)')
         print('[Fatel error] Departments not fetched')
         raise NullResponseError
+    
+    if first_is_english:
+        print('Parsing English department data ......')
+        ch_result = parse_department(response)
+    else :
+        print('Parsing Chinese department data ......')
+        en_result = parse_department(response)
     
     # Cross check if the two results are the same
     if len(en_result) != len(ch_result):
@@ -64,11 +64,13 @@ def fetch_departments():
             print('En: ' + str(en_result[i]))
             print('Ch: ' + str(ch_result[i]))
             raise ChEnDataMismatchError
-        else:
-            result.append({
-                'en'     : en_result[i]['name'],
-                'ch'     : ch_result[i]['name'],
-                'url'    : en_result[i]['url'],
-                'courses': en_result[i]['courses'],
-            })
+        
+        result.append({
+            'en'     : en_result[i]['name'],
+            'ch'     : ch_result[i]['name'],
+            'url'    : en_result[i]['url'],
+            'courses': en_result[i]['courses'],
+        })
+
+    print('[Done] All departments fetched ......')
     return result 
