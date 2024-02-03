@@ -3,3 +3,6 @@ class ChEnDataMismatchError(Exception):
 
 class NullResponseError(Exception):
     pass
+
+class RegEXNullMatchesErr(Exception):
+    pass
