@@ -44,6 +44,7 @@ def fetch_departments():
 def fetch_courses(department_data):
     deparement_url = department_data['url']
     print('[Work] Fetching departments ......')
+    print(f'Target department: {department_data["name"]["en"]}')
     reqter = Requester()
     response = reqter.getter(deparement_url)
 
@@ -88,3 +89,32 @@ def fetch_courses(department_data):
             'isFullSem'  : en_result[i]['isFullSem'],
             'MaxStu'     : en_result[i]['MaxStu']
              } for i in range(len(en_result))]
+    
+    
+def fetch_course_detail(course_data):
+    course_url = f'https://cis.ncu.edu.tw/Course/main/support/courseDetail.html?crs={course_data["serial"]}'
+    print('[Work] Fetching course detail ......')
+    print(f'Target course: {course_data["name"]["en"]}')
+    reqter = Requester()
+    response = reqter.getter(course_url)
+    
+    en_result = None
+    ch_result = None
+    
+    if reqter.is_english():
+        reqter.toggle_language()
+        response = reqter.getter(course_url)
+    
+    print('Parsing Chinese course detail data ......')
+    ch_result = parse_course_detail_ch(response)
+    
+    # reqter.toggle_language()
+    # response = reqter.getter(course_url)
+    
+    # print('Parsing English course detail data ......')
+    # en_result = parse_course_detail_en(response)
+    
+    # validated = val_course_detail(en_result, ch_result)
+    # print('[Done] Course detail fetched ......')
+    
+    return ch_result

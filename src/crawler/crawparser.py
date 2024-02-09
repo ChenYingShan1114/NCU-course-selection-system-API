@@ -177,3 +177,140 @@ def parse_course_en(response):
             'MaxStu'   :crs_MaxStu,
         })
     return results
+
+def parse_course_detail_ch(response):
+    html = bs(response.text, 'html.parser')
+    tables = html.find_all('table',class_='classBase')
+    rows = tables[0].find_all('tr')
+    crs_dept   = rows[4].find_all('td')[1].text.strip()
+    crs_system = rows[5].find_all('td')[1].text.strip()
+    crs_lang   = rows[10].find_all('td')[1].text.strip()
+    crs_card   = rows[11].find_all('td')[1].text.strip()
+    crs_assigned = int(rows[13].find_all('td')[1].text.strip())
+    crs_selected = int(rows[14].find_all('td')[1].text.strip())
+
+    crs_remark   = "\n".join(list(rows[15].find_all('td')[1].stripped_strings))
+    crs_remark = re.sub(r'[\r\t]','',crs_remark)
+    crs_goal     = "\n".join(list(rows[16].find_all('td')[1].stripped_strings))
+    crs_goal = re.sub(r'[\r\t]','',crs_goal)
+    crs_outline  = "\n".join(list(rows[17].find_all('td')[1].stripped_strings))
+    crs_outline = re.sub(r'[\r\t]','',crs_outline)
+    crs_textbook = "\n".join(list(rows[18].find_all('td')[1].stripped_strings))
+    crs_textbook = re.sub(r'[\r\t]','',crs_textbook)
+
+    crs_selfCompiledRate = rows[19].find_all('td')[1].text.strip()
+    crs_instructMethod   = rows[20].find_all('td')[1].text.strip()
+    crs_instructMethod = re.sub(r'[\r\t]','',crs_instructMethod)
+
+
+    crs_gradMethod       = "\n".join(list(rows[21].find_all('td')[1].stripped_strings))
+    crs_gradMethod = re.sub(r'[\r\t]','',crs_gradMethod)
+    crs_officeHour       = "\n".join(list(rows[22].find_all('td')[1].stripped_strings))
+    crs_officeHour = re.sub(r'[\r\t]','',crs_officeHour)
+
+    crs_teachWeeks       = rows[23].find_all('td')[1].text.strip()
+    
+    crs_flexDiscription  = "\n".join(list(rows[24].find_all('td')[1].stripped_strings))
+    crs_flexDiscription = re.sub(r'[\r\t]','',crs_flexDiscription)
+
+    crs_domain           = "\n".join(list(rows[25].find_all('td')[1].stripped_strings))
+    crs_domain           = re.sub(r'[\r\t]','',crs_domain)
+
+    temp = html.find_all('table',class_='courseMap')[0].find_all('tr')
+    csr_map = []
+    if len(temp) > 1:
+        for tmp in temp[2:]:
+            tmp = tmp.find_all('td') 
+            csr_map.append({
+                'competencies' :tmp[0].text.strip(),
+                'rating'       :re.sub(r'\s+','',tmp[1].text.strip()),
+                'assesments'   :[i.strip() for i in tmp[2].text.strip().split("，")],
+            })
+    temp = html.find_all('table',id='AutoNumber1')
+    crs_assignCriteria = []
+    if len(temp) != 0:
+        temp = temp[0].find_all('tr')
+        for tmp in temp[1:]:
+            tmp = tmp.find_all('td')
+            crs_assignCriteria.append(tmp[1].text.strip())
+    
+    temp = html.find_all('table',id='std')
+    crs_preselecStu = 0
+    crs_stuGender = {'male':0,'Female':0}
+    crs_stuGrade  = {'doctor':{},'master':{},'bachelor':{}}
+    crs_stus = []
+    if len(temp) != 0:
+        temp = temp[0].find_all('tr')
+        for tmp in temp[1:]:
+            tmp = tmp.find_all('td')
+            serial = tmp[0].text.strip()
+            stunum = tmp[1].text.strip()
+            stuDepartment = tmp[3].text.strip()
+            tmp2     = tmp[4].text.strip().split("-")
+            stuGrade = tmp2[0]
+            stuClass = "*"
+            if len(tmp2)>1:
+                stuClass = tmp2[1]
+            stuGender   = tmp[5].text.strip()
+            stuRequired = tmp[6].text.strip()
+            stuPriority = tmp[7].text.strip()
+            stuStatus   = tmp[8].text.strip()
+            
+            stu_isDoc = "博士" in stuDepartment
+            stu_isMas = "碩士" in stuDepartment
+            stu_isRequired = "必修" in stuRequired
+            stu_isPreselected = "初選" in stuStatus
+            if stu_isPreselected:
+                crs_preselecStu += 1
+            
+            if stuGender == "男":
+                crs_stuGender['male'] += 1
+            else:
+                crs_stuGender['Female'] += 1
+            
+            if stu_isDoc:
+                if stuGrade not in crs_stuGrade['doctor']:
+                    crs_stuGrade['doctor'][stuGrade] = 0
+                crs_stuGrade['doctor'][stuGrade] += 1
+            if stu_isMas:
+                if stuGrade not in crs_stuGrade['master']:
+                    crs_stuGrade['master'][stuGrade] = 0
+                crs_stuGrade['master'][stuGrade] += 1
+            if not stu_isDoc and not stu_isMas:
+                if stuGrade not in crs_stuGrade['bachelor']:
+                    crs_stuGrade['bachelor'][stuGrade] = 0
+                crs_stuGrade['bachelor'][stuGrade] += 1
+            crs_stus.append({
+                'serial'    :serial,
+                'stunum'    :stunum,
+                'department':stuDepartment,
+                'grade'     :stuGrade,
+                'class'     :stuClass,
+                'priority'  :stuPriority,
+                'isRequired':stu_isRequired,
+                'isPreselected':stu_isPreselected})
+    return {
+        'department'    :crs_dept,
+        'system'        :crs_system,
+        'language'      :crs_lang,
+        'card'          :crs_card,
+        'assigned'      :crs_assigned,
+        'selected'      :crs_selected,
+        'remark'        :crs_remark,
+        'goal'          :crs_goal,
+        'outline'       :crs_outline,
+        'textbook'      :crs_textbook,
+        'selfCompiledRate':crs_selfCompiledRate,
+        'instructMethod'  :crs_instructMethod,
+        'gradMethod'      :crs_gradMethod,
+        'officeHour'      :crs_officeHour,
+        'teachWeeks'      :crs_teachWeeks,
+        'flexDiscription' :crs_flexDiscription,
+        'domain'          :crs_domain,
+        'map'             :csr_map,
+        'assignCriteria'  :crs_assignCriteria,
+        'preselecStu'     :crs_preselecStu,
+        'stuGender'       :crs_stuGender,
+        'stuGrade'        :crs_stuGrade,
+        'stus'            :crs_stus,
+    }

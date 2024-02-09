@@ -10,10 +10,6 @@ class Requester:
     Chrome/58.0.3029.110 Safari/537.3'
     } 
     main_url = 'https://cis.ncu.edu.tw/Course/main/news/announce'
-
-    def __init__(self):
-        # Initial request to get the cookies
-        self.main_session.get(self.main_url, headers=self.headers)
     
     # Function to make a request to the given url
     # Returns the response if the request is successful
