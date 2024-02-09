@@ -186,8 +186,8 @@ def parse_course_detail_ch(response):
     crs_system = rows[5].find_all('td')[1].text.strip()
     crs_lang   = rows[10].find_all('td')[1].text.strip()
     crs_card   = rows[11].find_all('td')[1].text.strip()
-    crs_assigned = int(rows[13].find_all('td')[1].text.strip())
-    crs_selected = int(rows[14].find_all('td')[1].text.strip())
+    crs_assigned = int(re.sub(r'\([^)]*\)', '', rows[13].find_all('td')[1].text.strip()))
+    crs_selected = int(re.sub(r'\([^)]*\)', '', rows[14].find_all('td')[1].text.strip()))
 
     crs_remark   = "\n".join(list(rows[15].find_all('td')[1].stripped_strings))
     crs_remark = re.sub(r'[\r\t]','',crs_remark)
@@ -323,8 +323,8 @@ def parse_course_detail_en(response):
     crs_system = rows[5].find_all('td')[1].text.strip()
     crs_lang   = rows[10].find_all('td')[1].text.strip()
     crs_card   = rows[11].find_all('td')[1].text.strip()
-    crs_assigned = int(rows[13].find_all('td')[1].text.strip())
-    crs_selected = int(rows[14].find_all('td')[1].text.strip())
+    crs_assigned = int(re.sub(r'\([^)]*\)', '', rows[13].find_all('td')[1].text.strip()))
+    crs_selected = int(re.sub(r'\([^)]*\)', '', rows[14].find_all('td')[1].text.strip()))
 
     crs_remark   = "\n".join(list(rows[15].find_all('td')[1].stripped_strings))
     crs_remark = re.sub(r'[\r\t]','',crs_remark)
