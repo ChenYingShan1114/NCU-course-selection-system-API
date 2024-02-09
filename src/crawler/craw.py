@@ -108,13 +108,73 @@ def fetch_course_detail(course_data):
     print('Parsing Chinese course detail data ......')
     ch_result = parse_course_detail_ch(response)
     
-    # reqter.toggle_language()
-    # response = reqter.getter(course_url)
+    reqter.toggle_language()
+    response = reqter.getter(course_url)
     
-    # print('Parsing English course detail data ......')
-    # en_result = parse_course_detail_en(response)
+    print('Parsing English course detail data ......')
+    en_result = parse_course_detail_en(response)
     
-    # validated = val_course_detail(en_result, ch_result)
-    # print('[Done] Course detail fetched ......')
+    validated = val_course_detail(en_result, ch_result)
+    print('[Done] Course detail fetched ......')
     
-    return ch_result
+    return {
+        'serial'           :course_data['serial'           ],  
+        'department_serial':course_data['department_serial'], 
+        'code'             :course_data['code'          ],
+        'class'            :course_data['class'         ], 
+        'name'             :course_data['name'          ], 
+        'notice'           :course_data['notice'        ], 
+        'instructor'       :course_data['instructor'    ], 
+        'credits'          :course_data['credits'       ], 
+        'time_loc'         :course_data['time_loc'      ], 
+        'isRequired'       :course_data['isRequired'    ], 
+        'isFullSem'        :course_data['isFullSem'     ], 
+        'MaxStu'           :course_data['MaxStu'        ], 
+        'department'       :{'ch':ch_result['department'],
+                             'en':en_result['department']},
+        'system'           :{'ch':ch_result['system'  ],
+                             'en':en_result['system'  ]},
+        'language'         :{'ch':ch_result['language'],
+                             'en':en_result['language']},
+        'card'             :{'ch':ch_result['card'    ],
+                             'en':en_result['card'    ]},
+        'assigned'         :ch_result['assigned'        ],
+        'selected'         :ch_result['selected'        ],
+        'remark'           :{'ch':ch_result['remark'          ],
+                             'en':en_result['remark'          ]},
+        'goal'             :{'ch':ch_result['goal'            ],
+                             'en':en_result['goal'            ]},
+        'outline'          :{'ch':ch_result['outline'         ],
+                             'en':en_result['outline'         ]},
+        'textbook'         :{'ch':ch_result['textbook'        ],
+                             'en':en_result['textbook'        ]},
+        'selfCompiledRate' :{'ch':ch_result['selfCompiledRate'],
+                             'en':en_result['selfCompiledRate']},
+        'instructMethod'   :{'ch':ch_result['instructMethod'  ],
+                             'en':en_result['instructMethod'  ]},
+        'gradMethod'       :{'ch':ch_result['gradMethod'      ],
+                             'en':en_result['gradMethod'      ]},
+        'officeHour'       :{'ch':ch_result['officeHour'      ],
+                             'en':en_result['officeHour'      ]},
+        'teachWeeks'       :{'ch':ch_result['teachWeeks'      ],
+                             'en':en_result['teachWeeks'      ]},
+        'flexDiscription'  :{'ch':ch_result['flexDiscription' ],
+                             'en':en_result['flexDiscription' ]},
+        'domain'           :{'ch':ch_result['domain'          ],
+                             'en':en_result['domain'          ]},
+        'map'              :{'ch':ch_result['map'             ],
+                             'en':en_result['map'             ]},
+        'assignCriteria'   :{'ch':ch_result['assignCriteria'  ],
+                             'en':en_result['assignCriteria'  ]},
+        'preselecStu'      :ch_result['preselecStu'     ],
+        'stuGender'        :ch_result['stuGender'       ],
+        'stuGrade'         :ch_result['stuGrade'        ],
+        'stus'             :ch_result['stus'            ],
+    }
+
+def fetch_semester():
+    print('[Work] Fetching current semester ......')
+    reqter = Requester()
+    semester = reqter.current_semester()
+    print(f'[Done] Current semester: {semester}')
+    return semester

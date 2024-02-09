@@ -31,5 +31,5 @@ class Requester:
     def current_semester (self):
         response = self.getter(self.main_url)
         html = bs(response.text, 'html.parser')
-        sem = html.find_all('a', class_='intro_banner')[1].text.split("|")[0].strip()
+        sem = html.find_all('span', class_='intro_banner')[1].text.split("|")[0].strip()
         return sem

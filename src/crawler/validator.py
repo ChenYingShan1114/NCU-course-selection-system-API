@@ -38,17 +38,10 @@ def val_course_info(en_dat,ch_dat):
 
 def val_course_detail(en_dat,ch_dat):
     
-    validate_keys = ['serial'   ,
-                     'code'     ,
-                     'class'    , 
-                     'credits'   ,
-                     'required' ,
-                     'isFulSem' ,
-                     'max_stu'  ,
-                     'assigned'  ,
-                     'selected'  ,
-                     'prelim_sel',
-                     'gender'    , ]
+    validate_keys = ['assigned'   ,
+                     'preselecStu',
+                     'selected'   ,
+                     'stuGender'  ,]
     for key in validate_keys:
         if en_dat[key] != ch_dat[key]:
             log_message(key, en_dat, ch_dat)
