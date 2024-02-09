@@ -18,19 +18,10 @@ class Requester:
     # Function to make a request to the given url
     # Returns the response if the request is successful
     def getter(self, url):
-        try:
-            response = self.main_session.get(url, headers=self.headers)
-            response.raise_for_status()
-            return response
-        except requests.exceptions.HTTPError as http_err:
-            print('==================================')
-            print(f'HTTP error occurred: {http_err}')
-            print('==================================')
-        except Exception as err:
-            print('==================================')
-            print(f'An error occurred: {err}')
-            print('==================================')
-        return None
+        response = self.main_session.get(url, headers=self.headers)
+        response.raise_for_status()
+        return response
+
     
     def toggle_language(self):
         self.getter('https://cis.ncu.edu.tw/Course/main/lang')

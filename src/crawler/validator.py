@@ -23,13 +23,17 @@ def val_course_info(en_dat,ch_dat):
                      'code'     ,
                      'class'    , 
                      'credits'   ,
-                     'required' ,
-                     'isFulSem' ,
-                     'max_stu'  , ]
-    for key in validate_keys:
-        if en_dat[key] != ch_dat[key]:
-            log_message(key, en_dat, ch_dat)
-            return False
+                     'isRequired' ,
+                     'isFullSem' ,
+                     'MaxStu'  , ]
+    # check length of the two lists
+    if len(en_dat) != len(ch_dat):
+        log_message('length', len(en_dat), len(ch_dat))
+    for index in range(len(en_dat)):
+        for key in validate_keys:
+            if en_dat[index][key] != ch_dat[index][key]:
+                log_message(key, en_dat, ch_dat)
+                return False
     return True
 
 def val_course_detail(en_dat,ch_dat):
