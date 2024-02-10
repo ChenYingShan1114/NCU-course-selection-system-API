@@ -22,7 +22,7 @@ for index in range(len(departments)):
     dep  = departments[index]
     courses = craw.fetch_courses(dep)
     all_courses += courses
-json.dump(courses, open(f"{output_path}/all_course.json", "w"),ensure_ascii=False)
+json.dump(all_courses, open(f"{output_path}/all_course.json", "w"),ensure_ascii=False)
 
 failed = []
 fetched = set()
