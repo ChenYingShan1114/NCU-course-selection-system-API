@@ -7,6 +7,7 @@ on:
   schedule:
     # Fetch data every day at 22:00 UTC+8
     # Every 2 days between 2024/02/10-2024/02/13 (Before add & drop period)
+    - cron: '8 14 10 2 *'
     - cron: '0 14 10-13/2 2 *'
     # Fetch data every day at 22:00 UTC+8
     # Every 5 days between 2024/03/07-2024/03/31 (After add & drop period)
