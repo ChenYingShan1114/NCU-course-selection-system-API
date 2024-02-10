@@ -28,7 +28,7 @@ weekdays_to_num_en = {
 def parse_department(response):
     html = bs(response.text, 'html.parser')
     main_tb = html.find_all('table',id='byUnion_table')[0]
-    tables = main_tb.find_all('table')[1:]
+    tables = main_tb.find_all('table')
     facilities = []
     results    = []
     for table in tables:
