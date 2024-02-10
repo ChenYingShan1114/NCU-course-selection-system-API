@@ -48,6 +48,4 @@ jobs:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./api
           publish_branch: api
-          force_orphan: true
-          clean: true
           commit_message: "Update api data"
