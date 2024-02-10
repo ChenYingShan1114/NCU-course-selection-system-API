@@ -1,4 +1,4 @@
-name: Fetch & Update data
+name: Fetch & Update data (No Student List)
 
 # Schedual the workflow to run every day at 18:00 UTC+8
 # between add and drop period (2024/02/14-2024/02/29)
