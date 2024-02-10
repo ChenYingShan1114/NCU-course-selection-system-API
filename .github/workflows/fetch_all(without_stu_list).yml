@@ -23,7 +23,7 @@ jobs:
           git config --global user.email 'action@github.com'
           git fetch 
           git checkout main
-          git restore --source  origin/api api/
+          git restore --source  origin/api api
 
       - uses: actions/setup-python@v5
         with:
@@ -39,11 +39,17 @@ jobs:
           cd src
           python test.py
 
+      - name: Generate output folder
+        run: |
+          cd ..
+          mkdir output
+          cp -r api output/api
+
       # Push the updated 
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./api
+          publish_dir: ./output
           publish_branch: api
           commit_message: "Update api data"
