@@ -5,18 +5,18 @@ name: Fetch & Update data (No Student List)
 # fetch data with student list from the website and update the database
 on:
   schedule:
-    # Fetch data Every 7 days at 22:00 UTC+8
+    # Fetch data Every 7 days at 04:00 UTC+8
     # between 2024/03/07-2024/03/31 (After add & drop period)
-    - cron: '0 21 6-31/7 3 *'
-    # Fetch data Every 5 days  at 22:00 UTC+8
+    - cron: '0 20 6-31/7 3 *'
+    # Fetch data Every 5 days  at 04:00 UTC+8
     # between 2024/04/01-2024/05/10 (期中退選)
-    - cron: '0 21 */5 4 *'
-    - cron: '0 21 1-10/5 5 *'
-    - cron: '0 21 10 5 *'
-    # Fetch data Every 2 days at 22:00 UTC+8
+    - cron: '0 20 */5 4 *'
+    - cron: '0 20 1-10/5 5 *'
+    - cron: '0 20 10 5 *'
+    # Fetch data Every 2 days at 04:00 UTC+8
     # between 2024/05/11-2024/05/23 (before preselect next semester)
-    - cron: '0 21 11-23/7 5 *'
-    - cron: '0 21 23 5 *'
+    - cron: '0 20 11-23/7 5 *'
+    - cron: '0 20 23 5 *'
 jobs:
   Fetch:
     runs-on: ubuntu-latest

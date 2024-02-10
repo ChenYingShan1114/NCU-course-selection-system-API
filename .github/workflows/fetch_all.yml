@@ -5,14 +5,12 @@ name: Fetch & Update data (Full)
 # fetch data with student list from the website and update the database
 on:
   schedule:
-    # Fetch data at 2/11 01:00 UTC+8 testing fetch
-    - cron: '0 17 10 2 *'
     # Fetch data Every days at 05:00 UTC+8
     # between 2024/02/14-2024/02/29 (add and drop period)
-    - cron: '0 21 13-29 2 *'
+    - cron: '0 20 13-29 2 *'
     # Fetch data Every 2 days at 05:00 UTC+8
     # between 2024/03/04-2024/03/06 (manual add and drop period)
-    - cron: '0 21 4-6/2 3 *'
+    - cron: '0 20 4-6/2 3 *'
 jobs:
   Fetch:
     runs-on: ubuntu-latest
