@@ -24,8 +24,6 @@ jobs:
           git fetch 
           git checkout main
           git restore --source  origin/api api/
-          pwd
-          ls 
 
       - uses: actions/setup-python@v5
         with:
