@@ -1,7 +1,0 @@
-# ignore python compiled cache
-__pycache__/
-*.pyc
-# ignore source files
-src/*
-# ignore .github
-.github/
