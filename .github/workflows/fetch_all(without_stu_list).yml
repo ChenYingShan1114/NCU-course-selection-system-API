@@ -3,14 +3,22 @@ name: Fetch & Update data
 # Schedual the workflow to run every day at 18:00 UTC+8
 # between add and drop period (2024/02/14-2024/02/29)
 # fetch data with student list from the website and update the database
-# on:
-  # schedule:
-  #   - cron: '0 10 2 14-29 *'
 on:
-  push:
-    branches:
-      - main
-
+  schedule:
+    # Fetch data every day at 22:00 UTC+8
+    # Every 2 days between 2024/02/10-2024/02/13 (Before add & drop period)
+    - cron: '0 14 10-13/2 2 *'
+    # Fetch data every day at 22:00 UTC+8
+    # Every 5 days between 2024/03/07-2024/03/31 (After add & drop period)
+    - cron: '0 14 7-31/5 3 *'
+    # Fetch data every day at 22:00 UTC+8
+    # Every 2 days between 2024/04/01-2024/05/10 (期中退選)
+    - cron: '0 14 */2 4 *'
+    - cron: '0 14 0-10/2 5 *'
+    - cron: '0 14 10 5 *'
+    # Fetch data every day at 22:00 UTC+8
+    # Every 2 days between 2024/05/11-2024/05/23 (preselect next semester)
+    - cron: '0 14 11-23/2 5 *'
 jobs:
   Fetch:
     runs-on: ubuntu-latest
@@ -37,7 +45,7 @@ jobs:
       - name: Fetch data
         run: |
           cd src
-          python test.py
+          python fetch_all_without_stu_list.py
 
       - name: Generate output folder
         run: |
