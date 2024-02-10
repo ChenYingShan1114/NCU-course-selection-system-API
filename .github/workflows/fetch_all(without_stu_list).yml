@@ -14,7 +14,7 @@ on:
     # Fetch data every day at 22:00 UTC+8
     # Every 2 days between 2024/04/01-2024/05/10 (期中退選)
     - cron: '0 14 */2 4 *'
-    - cron: '0 14 0-10/2 5 *'
+    - cron: '0 14 1-10/2 5 *'
     - cron: '0 14 10 5 *'
     # Fetch data every day at 22:00 UTC+8
     # Every 2 days between 2024/05/11-2024/05/23 (preselect next semester)
