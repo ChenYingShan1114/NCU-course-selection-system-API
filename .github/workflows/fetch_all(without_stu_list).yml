@@ -1,0 +1,45 @@
+name: Fetch & Update data
+
+# Schedual the workflow to run every day at 18:00 UTC+8
+# between add and drop period (2024/02/14-2024/02/29)
+# fetch data with student list from the website and update the database
+# on:
+  # schedule:
+  #   - cron: '0 10 2 14-29 *'
+
+  
+jobs:
+    course add & drop period schedule:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+      
+      - name: copy last data from api branch
+        run: | 
+          git restore --source api api/
+
+      - name: Set up Python 3.9
+        uses: actions/setup-python@v5
+
+      - name: Install dependencies
+        run: | 
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+
+      -name: Fetch data
+        run: |
+        cd src
+        python test.py
+
+      # Push the updated 
+      -name: Deploy api
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          personal_token: ${{ secrets.PERSONAL_TOKEN }}
+          publish_dir: ./api
+          publish_branch: api
+          force_orphan: true
+          clean: true
+          commit_message: "Update api data"
+
