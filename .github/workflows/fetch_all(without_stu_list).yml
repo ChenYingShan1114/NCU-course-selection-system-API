@@ -41,7 +41,11 @@ jobs:
 
       - name: Generate output folder
         run: |
+          pwd
+          ls
           cd ..
+          pwd
+          ls
           mkdir output
           cp -r api output/api
 
