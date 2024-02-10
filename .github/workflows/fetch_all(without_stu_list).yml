@@ -23,7 +23,7 @@ jobs:
           git config --global user.email 'action@github.com'
           git fetch 
           git checkout main
-          git restore --source  origin/api api
+          git restore --source  origin/api api/
 
       - uses: actions/setup-python@v5
         with:
