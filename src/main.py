@@ -18,6 +18,7 @@ json.dump(departments, open(f"{output_path}/departments.json", "w"),ensure_ascii
 all_courses = []
 
 for index in range(len(departments)):
+    print(f"On fetching department's courses, current->({index+1}/{len(departments)})")
     dep  = departments[index]
     courses = craw.fetch_courses(dep)
     all_courses += courses
@@ -25,7 +26,9 @@ json.dump(courses, open(f"{output_path}/all_course.json", "w"),ensure_ascii=Fals
 
 failed = []
 fetched = set()
-for course in all_courses:
+for index in range(len(all_courses)):
+    course = all_courses[index]
+    print(f"On fetching course detail, current->({index+1}/{len(all_courses)})")
     initial_fetch = False
     if course['serial'] in fetched:
         print(f"[Warning] Course serial:{course['serial']} has been fetched")
@@ -67,6 +70,8 @@ for course in all_courses:
     his_name = datetime.datetime.now().strftime('%Y-%m-%d-%H-%M')
     json.dump(course_detail['stus'], open(f"{output_path}/{course['serial']}/history/{his_name}.json", "w"),ensure_ascii=False)
 
+print("========================================")
+print("=====Generating fetch status report=====")
 est_total_course = 0
 for dep in departments:
     est_total_course += dep['course_cnt']
@@ -81,3 +86,14 @@ status = {'update_time':datetime.datetime.now().strftime('%Y-%m-%d-%H-%M'),
 
 json.dump(status, open(f"{output_path}/status.json", "w"),ensure_ascii=False)
 json.dump(failed, open(f"{output_path}/failed.json", "w"),ensure_ascii=False)
+print("================Work Done===============")
+print("================ reports ===============")
+# print reports
+print(f"Total colleges          :{len(colleges)}")
+print(f"Total departments       :{len(departments)}")
+print(f"Estimated total courses :{est_total_course}")
+print(f"Total courses           :{len(all_courses)}")
+print(f"Detail actual fetched   :{len(fetched)}")
+print(f"Duplicate               :{len(all_courses) - len(fetched)}")
+print(f"Failed                  :{len(failed)}")
+print("========================================")
