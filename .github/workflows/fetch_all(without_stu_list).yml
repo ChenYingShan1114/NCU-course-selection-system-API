@@ -9,7 +9,7 @@ name: Fetch & Update data
 
   
 jobs:
-    course add & drop period schedule:
+    course_add_&_drop_period_schedule:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repository
@@ -27,13 +27,13 @@ jobs:
           python -m pip install --upgrade pip
           pip install -r requirements.txt
 
-      -name: Fetch data
+      - name: Fetch data
         run: |
         cd src
         python test.py
 
       # Push the updated 
-      -name: Deploy api
+      - name: Deploy api
         uses: peaceiris/actions-gh-pages@v3
         with:
           personal_token: ${{ secrets.PERSONAL_TOKEN }}
