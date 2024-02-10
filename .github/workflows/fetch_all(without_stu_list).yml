@@ -29,8 +29,8 @@ jobs:
 
       - name: Fetch data
         run: |
-        cd src
-        python test.py
+          cd src
+          python test.py
 
       # Push the updated 
       - name: Deploy api
