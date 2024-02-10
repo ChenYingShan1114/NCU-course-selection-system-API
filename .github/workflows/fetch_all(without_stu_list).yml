@@ -19,7 +19,7 @@ on:
     - cron: '0 20 23 5 *'
 jobs:
   Fetch:
-    runs-on: ubuntu-latest
+    runs-on: self-hosted
     steps:
       - uses: actions/checkout@v4
 

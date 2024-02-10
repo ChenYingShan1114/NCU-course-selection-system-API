@@ -13,7 +13,7 @@ on:
     - cron: '0 20 4-6/2 3 *'
 jobs:
   Fetch:
-    runs-on: ubuntu-latest
+    runs-on: self-hosted
     steps:
       - uses: actions/checkout@v4
 
