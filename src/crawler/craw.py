@@ -110,7 +110,7 @@ def fetch_course_detail(course_data):
     reqter.toggle_language()
     response = reqter.getter(course_url)
     
-    print('Parsing Chinese course detail ......')
+    print('Parsing English course detail ......')
     en_result = parse_course_detail_en(response)
     
     validated = val_course_detail(en_result, ch_result)
