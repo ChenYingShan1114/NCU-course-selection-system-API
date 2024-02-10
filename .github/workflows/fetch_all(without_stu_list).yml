@@ -9,8 +9,7 @@ name: Fetch & Update data
 
   
 jobs:
-  fetch:
-  name : Fetch-data
+  Fetch:
   runs-on: ubuntu-latest
   steps:
     - name: Checkout repository
