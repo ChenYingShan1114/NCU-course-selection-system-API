@@ -44,6 +44,7 @@ for index in range(len(all_courses)):
         continue
     
     if not os.path.exists(f"{output_path}/{course['serial']}"):
+        print(f"[Initial fetch] Creating directory for course serial:{course['serial']}")
         os.makedirs(f"{output_path}/{course['serial']}")
         os.makedirs(f"{output_path}/{course['serial']}/history")
         initial_fetch = True
@@ -54,8 +55,8 @@ for index in range(len(all_courses)):
                              'stuGender':[course_detail['stuGender']],}
         }
         json.dump(statistics, open(f"{output_path}/{course['serial']}/history/statistics.json", "w"),ensure_ascii=False)
-
-    if not initial_fetch:
+    else:
+        print(f'[Updating]course serial:{course["serial"]} directory already exists, updating statistics...')
         last_statistics = json.load(open(f"{output_path}/{course['serial']}/history/statistics.json"))
         last_statistics['timestamp'].append(datetime.datetime.now().timestamp())
         last_statistics['data']['selected'].append(course_detail['selected'])
@@ -63,6 +64,7 @@ for index in range(len(all_courses)):
         last_statistics['data']['preselecStu'].append(course_detail['preselecStu'])
         last_statistics['data']['stuGender'].append(course_detail['stuGender'])
         json.dump(last_statistics, open(f"{output_path}/{course['serial']}/history/statistics.json", "w"),ensure_ascii=False)
+    
     json.dump(course_detail, open(f"{output_path}/{course['serial']}/detial.json", "w"),ensure_ascii=False)
     
     
