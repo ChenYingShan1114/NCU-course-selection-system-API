@@ -17,6 +17,9 @@ on:
     # between 2024/05/11-2024/05/23 (before preselect next semester)
     - cron: '0 20 11-23/7 5 *'
     - cron: '0 20 23 5 *'
+  push:
+    branches:
+      - main
 jobs:
   Fetch:
     runs-on: self-hosted
@@ -31,10 +34,10 @@ jobs:
           git fetch 
           git checkout main
           git restore --source  origin/api api/
-
-      - uses: actions/setup-python@v5
-        with:
-          python-version: '3.9' 
+      #  Use default python for self hosted runner
+      # - uses: actions/setup-python@v5
+      #   with:
+      #     python-version: '3.9' 
 
       - name: Install dependencies
         run: | 

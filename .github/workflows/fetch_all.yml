@@ -11,9 +11,7 @@ on:
     # Fetch data Every 2 days at 04:00 UTC+8
     # between 2024/03/04-2024/03/06 (manual add and drop period)
     - cron: '0 20 4-6/2 3 *'
-  push:
-    branches:
-      - main
+
 jobs:
   Fetch:
     runs-on: self-hosted
@@ -28,10 +26,10 @@ jobs:
           git fetch 
           git checkout main
           git restore --source  origin/api api/
-
-      - uses: actions/setup-python@v5
-        with:
-          python-version: '3.9' 
+      #  Use default python for self hosted runner
+      # - uses: actions/setup-python@v5
+      #   with:
+      #     python-version: '3.9' 
 
       - name: Install dependencies
         run: | 
