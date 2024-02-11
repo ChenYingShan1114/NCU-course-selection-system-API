@@ -24,13 +24,16 @@ jobs:
   Fetch:
     runs-on: self-hosted
     steps:
-      - uses: actions/checkout@v4
+      
       - name: Install git
         run: |
           sudo apt-get -y install git
+      - uses: actions/checkout@v4
 
       - name: copy last data from api branch
         run: |
+          pwd
+          ls
           files=$(find $SRC_FOLDER_PATH -type f) # get the file list
           git config --global user.name 'GitHub Action'
           git config --global user.email 'action@github.com'
