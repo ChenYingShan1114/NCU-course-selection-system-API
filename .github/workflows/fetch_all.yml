@@ -17,7 +17,9 @@ jobs:
     runs-on: self-hosted
     steps:
       - uses: actions/checkout@v4
-
+      - name: Install git
+        run: |
+          sudo apt-get install git
       - name: copy last data from api branch
         run: |
           files=$(find $SRC_FOLDER_PATH -type f) # get the file list
