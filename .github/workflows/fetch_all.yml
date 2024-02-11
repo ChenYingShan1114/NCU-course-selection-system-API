@@ -11,15 +11,20 @@ on:
     # Fetch data Every 2 days at 04:00 UTC+8
     # between 2024/03/04-2024/03/06 (manual add and drop period)
     - cron: '0 20 4-6/2 3 *'
-
+  push:
+    branches:
+      - main
 jobs:
   Fetch:
     runs-on: self-hosted
     steps:
-      - uses: actions/checkout@v4
+      
       - name: Install git
         run: |
           sudo apt-get -y install git
+
+      - uses: actions/checkout@v4
+
       - name: copy last data from api branch
         run: |
           files=$(find $SRC_FOLDER_PATH -type f) # get the file list

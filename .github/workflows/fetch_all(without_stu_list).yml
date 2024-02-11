@@ -17,9 +17,7 @@ on:
     # between 2024/05/11-2024/05/23 (before preselect next semester)
     - cron: '0 20 11-23/7 5 *'
     - cron: '0 20 23 5 *'
-  push:
-    branches:
-      - main
+
 jobs:
   Fetch:
     runs-on: self-hosted
@@ -32,8 +30,6 @@ jobs:
 
       - name: copy last data from api branch
         run: |
-          pwd
-          ls
           files=$(find $SRC_FOLDER_PATH -type f) # get the file list
           git config --global user.name 'GitHub Action'
           git config --global user.email 'action@github.com'
