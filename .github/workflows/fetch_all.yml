@@ -26,7 +26,7 @@ jobs:
           git fetch 
           git checkout main
           git restore --source  origin/api api/
-       Use default python for self hosted runner
+
       - uses: actions/setup-python@v5
         with:
           python-version: '3.9' 
