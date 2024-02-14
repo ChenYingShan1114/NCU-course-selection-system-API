@@ -260,6 +260,7 @@ def parse_course_detail_ch(response):
             stu_isMas = "碩士" in stuDepartment
             stu_isRequired = "必修" in stuRequired
             stu_isPreselected = "初選" in stuStatus
+            stu_isSelected    = "中選" in stuStatus
             if stu_isPreselected:
                 crs_preselecStu += 1
             
@@ -288,7 +289,8 @@ def parse_course_detail_ch(response):
                 'class'     :stuClass,
                 'priority'  :stuPriority,
                 'isRequired':stu_isRequired,
-                'isPreselected':stu_isPreselected})
+                'isPreselected':stu_isPreselected,
+                'isSelected'   :stu_isSelected})
     return {
         'department'    :crs_dept,
         'system'        :crs_system,
