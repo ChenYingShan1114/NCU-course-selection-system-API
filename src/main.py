@@ -90,7 +90,6 @@ json.dump(status, open(f"{output_path}/status.json", "w"),ensure_ascii=False)
 json.dump(failed, open(f"{output_path}/failed.json", "w"),ensure_ascii=False)
 print("================Work Done===============")
 print("================ reports ===============")
-# print reports
 print(f"Total colleges          :{len(colleges)}")
 print(f"Total departments       :{len(departments)}")
 print(f"Estimated total courses :{est_total_course}")
