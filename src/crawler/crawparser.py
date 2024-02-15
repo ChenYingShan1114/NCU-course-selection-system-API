@@ -263,24 +263,24 @@ def parse_course_detail_ch(response):
             stu_isSelected    = "中選" in stuStatus
             if stu_isPreselected:
                 crs_preselecStu += 1
-            
-            if stuGender == "男":
-                crs_stuGender['male'] += 1
-            else:
-                crs_stuGender['Female'] += 1
-            
-            if stu_isDoc:
-                if stuGrade not in crs_stuGrade['doctor']:
-                    crs_stuGrade['doctor'][stuGrade] = 0
-                crs_stuGrade['doctor'][stuGrade] += 1
-            if stu_isMas:
-                if stuGrade not in crs_stuGrade['master']:
-                    crs_stuGrade['master'][stuGrade] = 0
-                crs_stuGrade['master'][stuGrade] += 1
-            if not stu_isDoc and not stu_isMas:
-                if stuGrade not in crs_stuGrade['bachelor']:
-                    crs_stuGrade['bachelor'][stuGrade] = 0
-                crs_stuGrade['bachelor'][stuGrade] += 1
+            if stu_isSelected:
+                if stuGender == "男":
+                    crs_stuGender['male'] += 1
+                else:
+                    crs_stuGender['Female'] += 1
+                
+                if stu_isDoc:
+                    if stuGrade not in crs_stuGrade['doctor']:
+                        crs_stuGrade['doctor'][stuGrade] = 0
+                    crs_stuGrade['doctor'][stuGrade] += 1
+                if stu_isMas:
+                    if stuGrade not in crs_stuGrade['master']:
+                        crs_stuGrade['master'][stuGrade] = 0
+                    crs_stuGrade['master'][stuGrade] += 1
+                if not stu_isDoc and not stu_isMas:
+                    if stuGrade not in crs_stuGrade['bachelor']:
+                        crs_stuGrade['bachelor'][stuGrade] = 0
+                    crs_stuGrade['bachelor'][stuGrade] += 1
             crs_stus.append({
                 'serial'    :serial,
                 'stunum'    :stunum,
@@ -399,26 +399,28 @@ def parse_course_detail_en(response):
             stu_isMas = "MsC" in stuDepartment
             stu_isRequired = "Required" in stuRequired
             stu_isPreselected = "preliminary" in stuStatus
+            stu_isSelected   = "selected" in stuStatus
             if stu_isPreselected:
                 crs_preselecStu += 1
             
-            if stuGender == "Male":
-                crs_stuGender['male'] += 1
-            else:
-                crs_stuGender['Female'] += 1
-            
-            if stu_isDoc:
-                if stuGrade not in crs_stuGrade['doctor']:
-                    crs_stuGrade['doctor'][stuGrade] = 0
-                crs_stuGrade['doctor'][stuGrade] += 1
-            if stu_isMas:
-                if stuGrade not in crs_stuGrade['master']:
-                    crs_stuGrade['master'][stuGrade] = 0
-                crs_stuGrade['master'][stuGrade] += 1
-            if not stu_isDoc and not stu_isMas:
-                if stuGrade not in crs_stuGrade['bachelor']:
-                    crs_stuGrade['bachelor'][stuGrade] = 0
-                crs_stuGrade['bachelor'][stuGrade] += 1
+            if stu_isSelected:
+                if stuGender == "Male":
+                    crs_stuGender['male'] += 1
+                else:
+                    crs_stuGender['Female'] += 1
+                
+                if stu_isDoc:
+                    if stuGrade not in crs_stuGrade['doctor']:
+                        crs_stuGrade['doctor'][stuGrade] = 0
+                    crs_stuGrade['doctor'][stuGrade] += 1
+                if stu_isMas:
+                    if stuGrade not in crs_stuGrade['master']:
+                        crs_stuGrade['master'][stuGrade] = 0
+                    crs_stuGrade['master'][stuGrade] += 1
+                if not stu_isDoc and not stu_isMas:
+                    if stuGrade not in crs_stuGrade['bachelor']:
+                        crs_stuGrade['bachelor'][stuGrade] = 0
+                    crs_stuGrade['bachelor'][stuGrade] += 1
             crs_stus.append({
                 'serial'    :serial,
                 'stunum'    :stunum,
