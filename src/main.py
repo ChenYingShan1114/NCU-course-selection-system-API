@@ -72,8 +72,8 @@ for index in range(len(all_courses)):
     his_name = datetime.datetime.now().strftime('%Y-%m-%d-%H-%M')
     json.dump(course_detail['stus'], open(f"{output_path}/{course['serial']}/history/{his_name}.json", "w"),ensure_ascii=False)
 
-print("========================================")
-print("=====Generating fetch status report=====")
+print("=========================================")
+print("=Generating semester fetch status report=")
 est_total_course = 0
 for dep in departments:
     est_total_course += dep['course_cnt']
@@ -98,3 +98,9 @@ print(f"Detail actual fetched   :{len(fetched)}")
 print(f"Duplicate               :{len(all_courses) - len(fetched)}")
 print(f"Failed                  :{len(failed)}")
 print("========================================")
+# output api status
+api_status = json.read(open(f"../api/status.json"))
+api_status["updatetime"] = datetime.datetime.now().strftime('%Y-%m-%d-%H-%M')
+api_status["current_semester"] = current_semester
+api_status["all_semesters"]    = list(set(api_status["all_semesters"] + [current_semester]))
+json.dump(api_status, open(f"../api/status.json", "w"),ensure_ascii=False)
