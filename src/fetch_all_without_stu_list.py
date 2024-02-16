@@ -97,3 +97,9 @@ print(f"Detail actual fetched   :{len(fetched)}")
 print(f"Duplicate               :{len(all_courses) - len(fetched)}")
 print(f"Failed                  :{len(failed)}")
 print("========================================")
+# output api status
+api_status = json.read(open(f"../api/status.json"))
+api_status["updatetime"] = datetime.datetime.now().strftime('%Y-%m-%d-%H-%M')
+api_status["current_semester"] = current_semester
+api_status["all_semesters"]    = list(set(api_status["all_semesters"] + [current_semester]))
+json.dump(api_status, open(f"../api/status.json", "w"),ensure_ascii=False)
