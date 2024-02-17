@@ -2,7 +2,11 @@ from crawler import craw
 import datetime
 import os 
 import json 
-
+print('============================================================')
+print('===================Script version: 1.0.0====================')
+print('============================================================')
+print('===================start fetching data======================')
+print('============================================================')
 current_semester = craw.fetch_semester()
 output_path = f"../api/{current_semester}"
 
