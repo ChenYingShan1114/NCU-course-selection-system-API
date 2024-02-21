@@ -235,7 +235,10 @@ def parse_course_detail_ch(response):
             crs_assignCriteria.append(tmp[1].text.strip())
     
     temp = html.find_all('table',id='std')
-    crs_preselecStu = 0
+    crs_preselecStu      = 0
+    crs_codeSelecStu     = 0
+    crs_manuallySelecStu = 0 
+    
     crs_stuGender = {'male':0,'Female':0}
     crs_stuGrade  = {'doctor':{},'master':{},'bachelor':{}}
     crs_stus = []
@@ -259,10 +262,23 @@ def parse_course_detail_ch(response):
             stu_isDoc = "博士" in stuDepartment
             stu_isMas = "碩士" in stuDepartment
             stu_isRequired = "必修" in stuRequired
-            stu_isPreselected = "初選" in stuStatus
-            stu_isSelected    = "中選" in stuStatus
+            stu_isSelected    = "中選"      in stuStatus
+            
+            stu_isPreselected = "初選"   in stuStatus
+            stu_isManuallySelected = "人工加選" in stuStatus
+            stu_isCodeSelected     = "密碼"     in stuStatus
+            
+            if stu_isManuallySelected:
+                crs_manuallySelecStu += 1
+                stu_isSelected = True
+                
+            if stu_isCodeSelected:
+                crs_codeSelecStu += 1
+                stu_isSelected = True
+            
             if stu_isPreselected:
                 crs_preselecStu += 1
+                stu_isSelected = True
             if stu_isSelected:
                 if stuGender == "男":
                     crs_stuGender['male'] += 1
@@ -282,26 +298,27 @@ def parse_course_detail_ch(response):
                         crs_stuGrade['bachelor'][stuGrade] = 0
                     crs_stuGrade['bachelor'][stuGrade] += 1
             crs_stus.append({
-                'serial'    :serial,
-                'stunum'    :stunum,
-                'department':stuDepartment,
-                'grade'     :stuGrade,
-                'class'     :stuClass,
-                'priority'  :stuPriority,
-                'isRequired':stu_isRequired,
-                'isPreselected':stu_isPreselected,
-                'isSelected'   :stu_isSelected})
+                'serial'            :serial                ,
+                'stunum'            :stunum                ,
+                'department'        :stuDepartment         ,
+                'grade'             :stuGrade              ,
+                'class'             :stuClass              ,
+                'priority'          :stuPriority           ,
+                'isRequired'        :stu_isRequired        ,
+                'isPreselected'     :stu_isPreselected     ,
+                'isManuallySelected':stu_isManuallySelected,
+                'isCodeSelected'    :stu_isCodeSelected    ,})
     return {
-        'department'    :crs_dept,
-        'system'        :crs_system,
-        'language'      :crs_lang,
-        'card'          :crs_card,
-        'assigned'      :crs_assigned,
-        'selected'      :crs_selected,
-        'remark'        :crs_remark,
-        'goal'          :crs_goal,
-        'outline'       :crs_outline,
-        'textbook'      :crs_textbook,
+        'department'      :crs_dept,
+        'system'          :crs_system,
+        'language'        :crs_lang,
+        'card'            :crs_card,
+        'assigned'        :crs_assigned,
+        'selected'        :crs_selected,
+        'remark'          :crs_remark,
+        'goal'            :crs_goal,
+        'outline'         :crs_outline,
+        'textbook'        :crs_textbook,
         'selfCompiledRate':crs_selfCompiledRate,
         'instructMethod'  :crs_instructMethod,
         'gradMethod'      :crs_gradMethod,
@@ -312,6 +329,8 @@ def parse_course_detail_ch(response):
         'map'             :csr_map,
         'assignCriteria'  :crs_assignCriteria,
         'preselecStu'     :crs_preselecStu,
+        'manuallySelecStu':crs_manuallySelecStu,
+        'codeSelecStu'    :crs_codeSelecStu,
         'stuGender'       :crs_stuGender,
         'stuGrade'        :crs_stuGrade,
         'stus'            :crs_stus,
@@ -374,7 +393,9 @@ def parse_course_detail_en(response):
             crs_assignCriteria.append(tmp[1].text.strip())
     
     temp = html.find_all('table',id='std')
-    crs_preselecStu = 0
+    crs_preselecStu      = 0
+    crs_codeSelecStu     = 0
+    crs_manuallySelecStu = 0 
     crs_stuGender = {'male':0,'Female':0}
     crs_stuGrade  = {'doctor':{},'master':{},'bachelor':{}}
     crs_stus = []
@@ -398,10 +419,23 @@ def parse_course_detail_en(response):
             stu_isDoc = "PhD" in stuDepartment
             stu_isMas = "MsC" in stuDepartment
             stu_isRequired = "Required" in stuRequired
-            stu_isPreselected = "preliminary" in stuStatus
-            stu_isSelected   = "selected" in stuStatus
+            stu_isSelected    = "selected"      in stuStatus
+            
+            stu_isPreselected = "preliminary"   in stuStatus
+            stu_isManuallySelected = "manually" in stuStatus
+            stu_isCodeSelected     = "code"     in stuStatus
+            
+            if stu_isManuallySelected:
+                crs_manuallySelecStu += 1
+                stu_isSelected = True
+                
+            if stu_isCodeSelected:
+                crs_codeSelecStu += 1
+                stu_isSelected = True
+            
             if stu_isPreselected:
                 crs_preselecStu += 1
+                stu_isSelected = True
             
             if stu_isSelected:
                 if stuGender == "Male":
@@ -422,25 +456,27 @@ def parse_course_detail_en(response):
                         crs_stuGrade['bachelor'][stuGrade] = 0
                     crs_stuGrade['bachelor'][stuGrade] += 1
             crs_stus.append({
-                'serial'    :serial,
-                'stunum'    :stunum,
-                'department':stuDepartment,
-                'grade'     :stuGrade,
-                'class'     :stuClass,
-                'priority'  :stuPriority,
-                'isRequired':stu_isRequired,
-                'isPreselected':stu_isPreselected})
+                'serial'            :serial                ,
+                'stunum'            :stunum                ,
+                'department'        :stuDepartment         ,
+                'grade'             :stuGrade              ,
+                'class'             :stuClass              ,
+                'priority'          :stuPriority           ,
+                'isRequired'        :stu_isRequired        ,
+                'isPreselected'     :stu_isPreselected     ,
+                'isManuallySelected':stu_isManuallySelected,
+                'isCodeSelected'    :stu_isCodeSelected    ,})
     return {
-        'department'    :crs_dept,
-        'system'        :crs_system,
-        'language'      :crs_lang,
-        'card'          :crs_card,
-        'assigned'      :crs_assigned,
-        'selected'      :crs_selected,
-        'remark'        :crs_remark,
-        'goal'          :crs_goal,
-        'outline'       :crs_outline,
-        'textbook'      :crs_textbook,
+        'department'      :crs_dept    ,
+        'system'          :crs_system  ,
+        'language'        :crs_lang    ,
+        'card'            :crs_card    ,
+        'assigned'        :crs_assigned,
+        'selected'        :crs_selected,
+        'remark'          :crs_remark  ,
+        'goal'            :crs_goal    ,
+        'outline'         :crs_outline ,
+        'textbook'        :crs_textbook,
         'selfCompiledRate':crs_selfCompiledRate,
         'instructMethod'  :crs_instructMethod,
         'gradMethod'      :crs_gradMethod,
@@ -451,6 +487,8 @@ def parse_course_detail_en(response):
         'map'             :csr_map,
         'assignCriteria'  :crs_assignCriteria,
         'preselecStu'     :crs_preselecStu,
+        'manuallySelecStu':crs_manuallySelecStu,
+        'codeSelecStu'    :crs_codeSelecStu,
         'stuGender'       :crs_stuGender,
         'stuGrade'        :crs_stuGrade,
         'stus'            :crs_stus,
