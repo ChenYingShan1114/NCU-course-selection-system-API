@@ -16,7 +16,7 @@ on:
       - main
 jobs:
   Fetch:
-    runs-on: self-hosted
+    runs-on: ubuntu-22.04
     steps:
       
       - name: Install git
