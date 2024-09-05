@@ -1,1 +1,1 @@
-{"timestamp": [1716064641.809709, 1716496038.737824, 1725437707.56], "data": {"selected": [0, 0, 0], "assigned": [0, 0, 0], "preselecStu": [0, 0, 0], "stuGender": [{"male": 0, "Female": 0}, {"male": 0, "Female": 0}, {"male": 0, "Female": 0}]}}
+{"timestamp": [1716064641.809709, 1716496038.737824, 1725437707.56, 1725510929.590843], "data": {"selected": [0, 0, 0, 43], "assigned": [0, 0, 0, 0], "preselecStu": [0, 0, 0, 0], "stuGender": [{"male": 0, "Female": 0}, {"male": 0, "Female": 0}, {"male": 0, "Female": 0}, {"male": 29, "Female": 14}]}}
