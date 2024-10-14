@@ -7,7 +7,9 @@ on:
   schedule:
     # Fetch data Every days at 04:00 UTC+8
     # between 2024/09/04-2024/09/18 (After add & drop period)
-    - cron: '0 4 4-28 9 *'
+    - cron: '0 4 14-31 10 2'
+    - cron: '0 4 1-16 11 2'
+    - cron: '0 4 16-30 11 *'
   push:
 
 jobs:
